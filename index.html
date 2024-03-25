@@ -150,9 +150,11 @@
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u>Introduction/Problem Definition</u></h5>
-    <p>Provide a brief introduction to your project topic, and describe why it's an interesting topic to investigate. This is where you want to describe the problem itself and the motivation behind tackling it. 
-      <br> Note:  Please include 1-3 paragraphs for this section. Diagrams, visuals, and/or showing example data can be highly effective to aid in telling your story. <br>
-      </p>
+    <p>
+      The realm of Reinforcement Learning (RL) has seen remarkable advancements, particularly in the domain of video game playing agents. In this project, our focus lies specifically on Atari games, 
+      with a keen emphasis on the Breakout environment. Breakout presents a classic yet challenging scenario for RL agents due to its dynamic nature and complex gameplay mechanics. By delving into this environment,
+       we aim to explore novel approaches to enhance the learning capabilities of RL agents, ultimately improving their performance in challenging gaming environments.  
+    </p>
 
      <!-- PUBLICATION ENTRY –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <!-- <div class="row video-row"> -->
@@ -192,10 +194,9 @@
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u>Related Works</u></h5>
-    <p>Describe related works in your problem space (research papers, libraries/tools, etc) for existing solutions for this problem 
-      or adjacent areas. Make sure to cite papers you reference!
-    <br> Note: Related work should have between 2 to 6 sentences for each work citing. Please cite works following IEEE guidelines. 
-    Organize related work into different subsections based on similarity of approaches.
+    <p>Prior research in RL has extensively explored various algorithms and techniques for training agents on Atari games. Notable among these is the Proximal Policy Optimization (PPO) algorithm, renowned for its stability and effectiveness in training deep RL agents. 
+      Additionally, methods involving image preprocessing techniques have shown promise in enhancing agent performance by providing more informative input representations.
+       However, the specific application of edge detectors to modify input observations in the context of Atari games remains relatively unexplored.
     <br>
     </p>
   </div>
@@ -203,13 +204,11 @@
     <div class="div_line"></div><br>
     <h5><u> Methods/Approach</u></h5>
     <p>
-      : Indicate algorithms, methodologies, or approaches you used to craft your solution. What was the reasoning or intuition 
-      for trying each methodology/algorithm. What does the overall pipeline look like and the details behind each component?
-       Make sure to establish any terminology or notation you will continue to use in this section. 
-       <br>
-       Note: Your methods and approaches may change through development, 
-       so in your project update, feel free to discuss all approaches you tried out! We expect at least 1 method/approach attempted.
-       <br>
+      Our primary methodology revolves around training an RL agent using the PPO algorithm within the Atari Breakout environment. 
+      The input observations provided to the agent consist of 84 x 84 grayscale images, representing the game screen at each timestep.
+       To potentially enhance the agent's learning capabilities, we propose to modify these input observations using edge detection techniques. 
+       By extracting edge information from the images, we aim to augment the raw visual data with more salient features, 
+      potentially aiding the agent in better understanding the game dynamics and making informed decisions.
     </p>
   </div>
   <div class="container">
@@ -225,10 +224,10 @@
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> What’s next</u></h5>
-    <p>What is your plan until the final project due date? What methods and experiments do you plan on running? </p>
-    <br>
-    Note: Include a task list (can use a table) indicating each step you are planning and anticipated completion date. 
-    <br>
+    <p>Moving forward, our plan entails conducting a series of experiments to evaluate the impact of incorporating edge detection preprocessing on the training performance of the RL agent.
+       We will meticulously analyze key performance metrics such as convergence speed, final reward attainment, and overall stability of training. 
+       Additionally, we intend to explore variations in edge detection algorithms and parameters to ascertain the optimal configuration for improving agent performance. 
+       Through these experiments, we strive to gain deeper insights into the interplay between image preprocessing techniques and RL training dynamics, ultimately advancing the state-of-the-art in gaming agent development. </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
