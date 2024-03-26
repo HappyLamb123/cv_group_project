@@ -217,6 +217,10 @@
       The QT-Opt algorithm presented in this paper is relevant to image-based reinforcement learning for environments like Atari Breakout. Like Atari games, QT-Opt learns policies directly from raw pixel inputs using deep Q-learning. 
       The distributed off-policy training procedure enables learning from massive amounts of experience data, which could potentially be useful for challenging exploration games like Breakout.
       Additionally, the stochastic optimization used in QT-Opt to select actions could help with the high-dimensional and potentially multimodal action spaces present in many Atari games.
+      <li><b>Huang, Yangru, et al. "Spectrum random masking for generalization in image-based reinforcement learning." Advances in Neural Information Processing Systems 35 (2022): 20393-20406.</b></li>
+      The paper discusses the challenge of generalization in image-based reinforcement learning (RL) and proposes a novel augmentation method called Spectrum Random Masking (SRM) to address this issue. SRM operates in the frequency domain and aims to enhance the diversity of training observations while maintaining the main content. 
+      This method has been shown to improve model robustness under various distribution shifts and enhance learning stability, making it relevant to Atari games, especially Breakout environments, where the ability to generalize across different visual scenarios is crucial for effective RL performance. 
+      The proposed SRM method's focus on frequency-based augmentation and its potential to improve generalization aligns with the challenges faced in training RL agents for Atari games, where visual inputs and distribution shifts are significant factors impacting performance.
     <br>
     </p>
   </div>
