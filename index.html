@@ -266,6 +266,23 @@
 </ol>
 
 <p>We then added Edge Detection wrapper in two separate ways that applies Canny edge detection to highlight important visual features. One is converting the frames into pure edge graphs and one highlighting the edge by switching one channel of RGB to be edge detector.</p>
+<figure>
+  <img src="assets/img/fig1.png" alt=" fig1">
+  <figcaption>Figure 1. Original Frame</figcaption>
+</figure>
+<figure>
+  <img src="assets/img/fig2.png" alt=" fig2">
+  <figcaption>Figure 2. Pure Edge Enhanced Frame After Preprocess</figcaption>
+</figure>
+<figure>
+  <img src="assets/img/fig3.png" alt=" fig3">
+  <figcaption>Figure 3. No Edge Enhanced (Baseline) Frame After Preprocess</figcaption>
+</figure>
+<figure>
+  <img src="assets/img/fig4.png" alt=" fig4">
+  <figcaption>Figure 4. Edge Enhanced + Color Scale Frame After Preprocess</figcaption>
+</figure>
+
   </div>
   <div class="container">
     <div class="div_line"></div><br>
@@ -283,6 +300,10 @@
     <strong>Edge Detection with Image Stacking (Pink):</strong> The most successful approach combined edge detection with image stacking, integrating both structural and temporal information into the AI's decision-making process with scores improving significantly to reach around 60. This method significantly outperformed the others, indicating that a composite representation of visual data, incorporating both immediate and historical game states, yields superior learning outcomes.
   </li>
 </ol>
+<figure>
+  <img src="assets/img/fig5_new.png" alt=" fig5">
+  <figcaption>Fig 5. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
+</figure>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
