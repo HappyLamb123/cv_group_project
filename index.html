@@ -231,23 +231,58 @@
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> Methods/Approach</u></h5>
-    <p>
-      Our primary methodology revolves around training an RL agent using the PPO algorithm within the Atari Breakout environment. 
-      The input observations provided to the agent consist of 84 x 84 grayscale images, representing the game screen at each timestep.
-       To potentially enhance the agent's learning capabilities, we propose to modify these input observations using edge detection techniques. 
-       By extracting edge information from the images, we aim to augment the raw visual data with more salient features, 
-      potentially aiding the agent in better understanding the game dynamics and making informed decisions.
-    </p>
+    <h5>Simplified Proximal Policy Optimization Algorithm</h5>
+
+<p>Although there are lots of available implementations of Proximal Policy Optimization (PPO) we created a simplified version of the algorithm without the overhead of more complex systems which enhanced computational efficiency and facilitates experimentation.</p>
+
+<ul>
+  <li><strong>Convolutional Neural Network (CNN):</strong> Our model architecture includes a CNN tailored for extracting features from game frames. The network consists of three convolutional layers, each followed by ReLU activation and max pooling, culminating in a flattened layer for further processing.</li>
+  <li><strong>Policy and Value Networks:</strong> Separate networks derive from the CNN's output, with the policy network predicting action probabilities and the value network estimating state values. This separation facilitates the efficient optimization of both policy and value predictions.</li>
+</ul>
+
+<p>Our training process is governed by a carefully selected set of hyperparameters, optimized to balance learning efficiency and performance:</p>
+
+<ul>
+  <li><strong>Learning Rate:</strong> 0.0001, controls the step size during optimization, ensuring steady convergence without overshooting.</li>
+  <li><strong>Gamma (γ):</strong> 0.98, discounts future rewards, balancing immediate and long-term gains.</li>
+  <li><strong>Lambda (λ):</strong> 0.95, used in the Generalized Advantage Estimation (GAE), influencing the bias-variance trade-off in advantage computation.</li>
+  <li><strong>Epsilon Clip (ε):</strong> 0.1, limits the ratio of new to old policy probabilities, preventing large policy updates that could destabilize training.</li>
+  <li><strong>K Epochs:</strong> 3, the number of epochs for updating the policy using the same set of sampled data, ensuring thorough utilization of each batch.</li>
+  <li><strong>T Horizon:</strong> 20, defines the length of the trajectory segment used for each update, balancing the trade-off between update frequency and the quality of the advantage estimates.</li>
+</ul>
+
+<p><strong>Custom Vector Environment</strong></p>
+
+<p>We also implemented designed algorithm in vectorized environment so that multiple instances of the environment can be run in parallel. This means that the agent can collect more diverse experience in a shorter amount of time, leading to faster learning and improved overall performance.</p>
+
+<p><strong>Image Preprocessing Techniques</strong></p>
+
+<p>A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into the model.</p>
+
+<p>To optimize the agent's ability to learn from visual inputs, we developed a sophisticated preprocessing pipeline that includes the following steps:</p>
+<ol>
+  <li><strong>AtariPreprocessing and PreprocessAtari wrapper:</strong> Follows the guidelines in Machado et al. (2018) which applies frame skipping, max-pooling, resizing, grayscale conversion etc.</li>
+  <li><strong>Utilizing the FrameStack wrapper:</strong> We stack multiple consecutive frames, providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
+</ol>
+
+<p>We then added Edge Detection wrapper in two separate ways that applies Canny edge detection to highlight important visual features. One is converting the frames into pure edge graphs and one highlighting the edge by switching one channel of RGB to be edge detector.</p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> Experiments / Results</u></h5>
-    <p>Describe what you tried and what datasets were used. We aren’t expecting you to beat state of the art, but we are interested 
-      in you describing what worked or didn’t work and to give reasoning as 
-      to why you believe so. Compare your approach against baselines (either previously established or you established) in this section. Provide at least one qualitative result
-       (i.e. a visual output of your system on an example image). 
-      <br> Note: For the project update, feel free to discuss what worked and didn’t work. Why do you think an approach was (un)successful?
-       We expect you to have dealt with dataset setup and completed at least 1 experimental result by the project update.<br></p>
+    <p>We conducted three distinct training experiments on the Breakout game, employing different image preprocessing strategies to evaluate their impact on learning performance (Figure 5).</p>
+
+<ol>
+  <li>
+    <strong>Default Preprocessing (Blue):</strong> Our first experiment adhered to the default preprocessing settings provided by OpenAI's AtariPreprocessing, FrameStacking, and simple crop of top and bottom of the page that consist of useless information for agent training. This method provided a baseline for performance comparison, focusing on the original visual representation with minimal modifications. Shows a score ending near 40.
+  </li>
+  <li>
+    <strong>Edge Detection Only (Black):</strong> The second approach used edge detection exclusively to process the game images. This technique, while effective in highlighting structural information, resulted in suboptimal performance due to the absence of color data, which is essential for recognizing score-related changes in the game environment. Shows a score increase modestly to just above 20.
+  </li>
+  <li>
+    <strong>Edge Detection with Image Stacking (Pink):</strong> The most successful approach combined edge detection with image stacking, integrating both structural and temporal information into the AI's decision-making process with scores improving significantly to reach around 60. This method significantly outperformed the others, indicating that a composite representation of visual data, incorporating both immediate and historical game states, yields superior learning outcomes.
+  </li>
+</ol>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
