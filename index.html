@@ -201,10 +201,6 @@
     <div class="div_line"></div><br>
     <h5><u>Related Works</u></h5>
     <p>
-      
-      Prior research in RL has extensively explored various algorithms and techniques for training agents on Atari games. Notable among these is the Proximal Policy Optimization (PPO) algorithm, renowned for its stability and effectiveness in training deep RL agents. 
-      Additionally, methods involving image preprocessing techniques have shown promise in enhancing agent performance by providing more informative input representations.
-       However, the specific application of edge detectors to modify input observations in the context of Atari games remains relatively unexplored.
       <li><b>Thananjeyan, Brijen, et al. "Recovery rl: Safe reinforcement learning with learned recovery zones." 
         IEEE Robotics and Automation Letters 6.3 (2021): 4915-4922.</b> </li>
         In the context of image-based RL, this work is particularly relevant as it 
@@ -212,8 +208,15 @@
         as well as an image-based obstacle avoidance task on a physical robot. 
         The ability to learn safety critics and recovery policies from high-dimensional
          image observations is an important capability for applying RL to real-world robotics tasks.
-
-
+      <li><b>D. Yarats, et al. "Reinforcement Learning with Prototypical Representations," in Proceedings of the 38th International Conference on Machine Learning, vol. 139, pp. 11920-11931, PMLR, 2021. [Online]. Available: https://proceedings.mlr.press/v139/yarats21a.html</b></li>
+      Proto-RL is a novel self-supervised framework that learns visual representations and prototypes in a task-agnostic pre-training phase for image-based reinforcement learning. 
+      During pre-training, it explores the environment to maximize state entropy while learning the representations/prototypes. 
+      The learned representations and prototypes then accelerate downstream task learning by providing effective embeddings and enabling better exploration, leading to state-of-the-art performance on various challenging visual control tasks from the DeepMind Control Suite.
+      <li><b>D. Kalashnikov et al., "Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation," in Proceedings of The 2nd Conference on Robot Learning, vol. 87, pp. 651-673, PMLR, 2018. Available: https://proceedings.mlr.press/v87/kalashnikov18a.html
+      </b></li>
+      The QT-Opt algorithm presented in this paper is relevant to image-based reinforcement learning for environments like Atari Breakout. Like Atari games, QT-Opt learns policies directly from raw pixel inputs using deep Q-learning. 
+      The distributed off-policy training procedure enables learning from massive amounts of experience data, which could potentially be useful for challenging exploration games like Breakout.
+      Additionally, the stochastic optimization used in QT-Opt to select actions could help with the high-dimensional and potentially multimodal action spaces present in many Atari games.
     <br>
     </p>
   </div>
