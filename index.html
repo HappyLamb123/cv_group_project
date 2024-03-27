@@ -300,7 +300,25 @@
     <strong>Edge Detection with Image Stacking (Pink):</strong> The most successful approach combined edge detection with image stacking, integrating both structural and temporal information into the AI's decision-making process with scores improving significantly to reach around 60. This method significantly outperformed the others, indicating that a composite representation of visual data, incorporating both immediate and historical game states, yields superior learning outcomes.
   </li>
 </ol>
-<figure>
+<style>  .custom-figure {
+  width: 800px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed, or use a fixed height */
+  float: left;
+  margin-right: 20px; /* Optional: Add some spacing between the figure and other content */
+}
+  /* Additional CSS for demonstration purposes */
+  .custom-figure img {
+    max-width: 100%; /* Ensure the image doesn't exceed the figure width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper alignment */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+</style>
+
+<figure class="custom-figure">
+
+
   <img src="assets/img/fig5_new.png" alt=" fig5">
   <figcaption>Fig 5. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
 </figure>
