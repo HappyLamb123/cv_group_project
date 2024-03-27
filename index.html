@@ -224,25 +224,30 @@
           <img src="assets/img/fig7.png" alt=" fig1" width="1000" class="center">
           <figcaption class="center">Figure 2. Original Frame</figcaption>
         </figure>
-        <p>The input observations provided to the agent consist of 84 x 84 grayscale images capturing the game screen at each timestep. A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into
-          the model.To optimize the agent's ability to learn from visual inputs, we developed a sophisticated preprocessing pipeline that includes the following steps:</p>
-        <ol>
-          <li><strong>AtariPreprocessing and PreprocessAtari wrapper:</strong> Follows the guidelines in Machado et al. (2018) which applies frame skipping, max-pooling, resizing, grayscale conversion etc.</li>
-          <li><strong>Utilizing the FrameStack wrapper:</strong> We stack multiple consecutive frames, providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
-        </ol>
-
-        <p>We then added Edge Detection wrapper in two separate ways that applies Canny edge detection to highlight important visual features. One is converting the frames into pure edge graphs and one highlighting the edge by switching one channel of RGB to be edge detector.</p>
+        <p>A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into
+          the model.To optimize the agent's ability to learn from visual inputs, we developed a preprocessing pipeline that includes the following
+          steps. First, the original input observations from the game is RGB image with size of 210 x 160 (Figure 1.a). We first <b>preprocess</b> this image and then applies
+          edge detectors on top of it. Figure 2 illustrates the examplary image from each procedure
+          <ul>
+            <li>(a) Original Frame</li>
+            <li>(b) After Preprocessing</li>
+              <ul>
+                  <li>resize into 84 x 84</li>
+                  <li>transform into gray image</li>
+                  <li>cut out the top 16 pixels and bottom 4 pixels which are irrelevant to game playing</li>
+                  <li>stack 4 consecutive images :  providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
+                </ul>
+            <li>(c) Edge Enhanced Frame After Preprocessing </li>
+            <li>(d) Edge Enhanced + Color Scale Frame After Preprocessing</li>
+          </ul>
 
 
 
     </div>
     <div class="eleven columns ">
     <p><b>2) Reinforcement Learning </b></p>
-    Although there are lots of available implementations of Proximal Policy Optimization (PPO) we created a simplified version of the algorithm without the
-      overhead of more complex systems which enhanced computational efficiency and facilitates experimentation.
-
-
-
+    We directly implemented RL algorihtm, Proximal Policy Optimization (PPO) by ourselves to avoid the overhead of more complex systems. This enhanced computational
+      efficiency and facilitates experimentation.
 
     <ul>
       <li><strong>Convolutional Neural Network (CNN):</strong> Our model architecture includes a CNN tailored for extracting features from game frames. The network consists of three convolutional layers, each followed by ReLU activation and max pooling, culminating in a flattened layer for further processing.</li>
@@ -306,13 +311,11 @@
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> What’s next</u></h5>
-    <p>Moving forward, our plan entails conducting a series of experiments to evaluate the impact of incorporating edge detection preprocessing on the
-      training performance of the RL agent.
-       We will also analyze key performance metrics such as convergence speed, final reward attainment, and overall stability of training.
-       Additionally, we intend to explore variations in edge detection algorithms and parameters to ascertain the optimal configuration for improving agent
-      performance.
-       Through these experiments, we strive to gain deeper insights into the interplay between image preprocessing techniques and RL training dynamics,
-      ultimately advancing the state-of-the-art in gaming agent development. </p>
+    <p>
+    Implementation of ViT (~April 10th) : Juntao He, Eva Li </br>
+      Experimentation with ViT (~April 17th): Seungeun Rho</br>
+      Final Report (~April 20th): Seungeun Rho, Juntao He, Eva Li</br>
+    </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
