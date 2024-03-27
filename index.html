@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" href="assets/icons/icon.png">
+
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -34,132 +34,93 @@
 
 <body>
   <div class="container">
-    <!-- NAVBAR --------------------------------- -->
-    <!-- <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href="index.html">About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </nav> -->
-
-    <!-- Personal Info  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="row profile-row" style="margin-top: 4%">
-      <div class="one columns"></div>
-      <div class="three columns">
-        <!-- Profile photo  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <div style="text-align: center;">
-          <img src="assets/img/photo.webp" class="profile-photo" alt="profile photo"><br>
-        </div>
-        <!-- Name
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <h5 style="text-align: center;">Gatech_CV_Cacao</h5>
-        <!-- Social links
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <!-- <div id="social">
-          <a href="https://twitter.com/initmaks"><img src="assets/icons/twitter.png" class="iico" /></a>
-          <a rel="me" href="https://sigmoid.social/@maks"><img src="assets/icons/mastodon.png" class="iico" /></a>
-          <a href="https://github.com/initmaks"><img src="assets/icons/github.png" class="iico" /></a>
-          <a href="assets/pdfs/CV.pdf"><img src="assets/icons/file.png" class="iico" /></a>
-          <img src="assets/icons/mail.png" style="cursor: pointer;" class="iico" id="iemail" title="click to reveal" />
-        </div> -->
-        <!-- <div id="demail"></div> will reveal email -->
-      </div>
-
-      <div class="eight columns" style="margin-top: 5%;">
-        <p style="text-align:justify;">
-          <!-- Self-introduction
-          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-          This webpage contains the  materials for the CS 6476 group project. Team members are Seungeun Rho, Eva Li and Juntao He.
-        </p>
-        <!-- <strong>Competences:</strong>
-        <a>python</a>,
-        <a>pytorch</a>,
-        <a>pybullet</a>,
-        <a>iGibson</a>,
-        <a>OpenCV</a>,
-        <a>numpy</a>,
-        <a>Tensorflow</a>,
-        <a>C/C++</a>,
-        <a>ROS</a>,
-        <a>docker</a> -->
-
-        <h5><u>Project description</u></h5>
-        <ul>
-          <p>In this project, we embark on a journey into the realm of Reinforcement Learning (RL) by conducting experiments in the Atari gaming domain, with a particular focus on the Breakout environment. 
-            Our objective is to train an RL agent using the Proximal Policy Optimization (PPO) algorithm, a renowned technique for its stability and effectiveness in training deep RL agents. 
-            The input observations provided to the agent consist of 84 x 84 grayscale images capturing the game screen at each timestep.
-
-            A novel aspect of our approach involves modifying the input observations using edge detection techniques.
-             By augmenting the raw visual data with edge information, we aim to provide the RL agent with more salient features to better understand the game dynamics. Our primary goal is to evaluate whether incorporating edge detection preprocessing enhances the training performance of the RL agent, ultimately leading to improved gameplay proficiency. Through rigorous experimentation and analysis, we seek to uncover insights into the interplay between image preprocessing techniques and RL training dynamics, thereby contributing to advancements in both gaming agent development and computer vision research.</p>
-          <!-- <li> <b>JUL'23</b> - Our work on Learning-oriented Robot Design was accepted at IROS 2023 <a
-            href="https://learning-robot.github.io/">[project page]</a></li>
-          <li> <b>MAR'23</b> - Check out our latest work on Design a Learning Robot <a
-              href="https://learning-robot.github.io/">[project page]</a></li>
-          <li> <b>APR'22</b> - Human Motion Control of Quadrupedal Robots accepted at RSS <a
-              href="https://sites.google.com/view/humanconquad/">[project page]</a></li>
-          <li> <b>SEP'21</b> - Excited to be joining <a href="https://x.company">X - the moonshot factory</a> ( <a
-              href="https://everydayrobots.com">Everyday Robots</a> ) for PhD
-            Residency!</li>
-          <li> <b>SEP'21</b> - Check out our work on Learning Sidewalk Navigation <a
-              href="./navigation.html">[project page]</a></li> -->
-          <!-- <li> Add details here</li> -->
-          <!-- <li> <b>MAY'21</b> - Awarded the fellowship by the Machine Learning Center at Georgia Tech. <a href="https://mlatgt.blog/2021/05/10/the-machine-learning-center-awards-inaugural-mlgt-fellows/">[link]</a> </li> -->
-          <!-- <li> <b>FEB'21</b> Paper on Learning Human Search Behavior accepted at EUROGRAPHICS'2021! <a href="https://arxiv.org/pdf/2011.03618.pdf">[pdf]</a><a href="https://arxiv.org/abs/2011.03618">[arXiv]</a></li> -->
-          <!-- <li> <b>DEC'20</b> Paper on Few-shot visual sensor meta-adaptation accepted at ICRA'2021! <a href="https://arxiv.org/pdf/2011.03609.pdf">[pdf]</a><a href="http://arxiv.org/abs/2011.03609">[arXiv]</a></li> -->
-        </ul>
 
 
-      </div>
+        </br>
+
+        <h3 style="text-align: center;">Bridging from images to actions : </br>How computer vision techniques affect RL agent? </h3>
+        <h5 style="text-align: center;">Georgia Tech CS6476 Project (Mar 2024)  </br>Eva Li, Juntao He, and Seungeun Rho</h5>
+
 
     </div>
-  </div>
+
 
   <!-- Companies
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="div_line"></div><br>
-    <div class="row">
-      <div class="four columns center">
-        <a href="https://www.cc.gatech.edu/">
-          <img src="assets/icons/org/Computing.png" alt="CS department Logo" class="logo">
-        </a>
-        <!-- <p class="company-name">
-          Research Intern @ The AI Institute<br>2024 - Present
-        </p> -->
-      </div>
-      <div class="four columns center">
-        <a href="https://www.gatech.edu/">
-          <img src="assets/icons/org/GeorgiaTechLogo.png" alt="Georgia Tech Logo" class="logo">
-        </a>
-        <!-- <p class="company-name">
-          PhD in Robotics @ Georgia Tech<br>2020 - Present
-        </p> -->
-      </div>
-      <div class="four columns center">
-        <div class="row">
-          <a href="https://research.gatech.edu/robotics">
-            <img src="assets/icons/org/GA-Tech-IRIM-logo.png" alt="IRIM Logo" class="logo">
-          </a>
-        </div>
-        <!-- <p class="company-name">
-          AI Residency @ Google X<br>2021 - 2022
-        </p> -->
-      </div>
-    </div>
-  </div>
-  
+<!--  <div class="container">-->
+<!--    <div class="div_line"></div><br>-->
+<!--    <div class="row">-->
+<!--      <div class="four columns center">-->
+<!--        <a href="https://www.cc.gatech.edu/">-->
+<!--          <img src="assets/icons/org/Computing.png" alt="CS department Logo" class="logo">-->
+<!--        </a>-->
+<!--        &lt;!&ndash; <p class="company-name">-->
+<!--          Research Intern @ The AI Institute<br>2024 - Present-->
+<!--        </p> &ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="four columns center">-->
+<!--        <a href="https://www.gatech.edu/">-->
+<!--          <img src="assets/icons/org/GeorgiaTechLogo.png" alt="Georgia Tech Logo" class="logo">-->
+<!--        </a>-->
+<!--        &lt;!&ndash; <p class="company-name">-->
+<!--          PhD in Robotics @ Georgia Tech<br>2020 - Present-->
+<!--        </p> &ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="four columns center">-->
+<!--        <div class="row">-->
+<!--          <a href="https://research.gatech.edu/robotics">-->
+<!--            <img src="assets/icons/org/GA-Tech-IRIM-logo.png" alt="IRIM Logo" class="logo">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; <p class="company-name">-->
+<!--          AI Residency @ Google X<br>2021 - 2022-->
+<!--        </p> &ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  -->
   <!-- Latest
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="div_line"></div><br>
-    <h5><u>Introduction/Problem Definition</u></h5>
+    <h5><u>Project description </u></h5>
+
+    <figure>
+
+      <img src="assets/img/fig1.png" alt=" fig1" width="200" class="center">
+      <figcaption class="center">Figure 1. An in-game scene of Atari-Breakout</figcaption>
+
+    </figure>
+
     <p>
-      The realm of Reinforcement Learning (RL) has seen remarkable advancements, particularly in the domain of video game playing agents. In this project, our focus lies specifically on Atari games, 
-      with a keen emphasis on the Breakout environment. Breakout presents a classic yet challenging scenario for RL agents due to its dynamic nature and complex gameplay mechanics. By delving into this environment,
-       we aim to explore novel approaches to enhance the learning capabilities of RL agents, ultimately improving their performance in challenging gaming environments.  
+      In this project, we aim to investigate how both classical and modern techniques in computer vision affects to the performance of
+      Reinforcement Learning (RL) agents in game domains. We trained an agent that decides an action based on an observation using RL.
+      We used Breakout-Atrai game as our benchmark environments, since Breakout presents a classic yet challenging scenario for RL agents due to its dynamic nature and complex gameplay mechanics.
+      For each step, the only information given to the agent is RGB image, so the agent should be able to infer the true state by encoding the low-level image input
+      into high-level embeddings, which later will be used to decide actions.</p>
+    <p>
+      To demonstrate the effectiveness of computer vision techniques we learned from class, we apply following two different techniques for extracting the informations from image,
+      and see how the final performance changes.
+      </br></br>
+
+      <b>1) Enhancing observation using Edge Detectors</b></br>
+      By augmenting the raw visual data with edge information, we aim to provide the RL agent with more salient features to better understand the game dynamics.
+      Our primary goal is to evaluate whether incorporating edge detection preprocessing enhances the training performance of the RL agent, ultimately leading to
+      improved gameplay proficiency.
+      </br></br>
+      <b>2) Ablation study of neural network architectures - CNN vs Vision Transformer</b></br>
+      During the coursework we learned two most prominent neural network archiectures for image encoding; Convolutional Neural Networks(CNN) and Vision Transformer(ViT).
+      We aim to compare the effectiveness of each architecture for encoding image for RL agents.
+      </br></br>
+
+      Since the RL has seen remarkable advancements particularly in the domain of video game playing agents, we believe that understanding the usefulness of each computer vision
+      techniques for encoding images will lead to deeper understanding of each method.
+
+
+    </p>
+
+    <p>
+
     </p>
 
      <!-- PUBLICATION ENTRY –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -200,89 +161,110 @@
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u>Related Works</u></h5>
+    In this section, we cover representative works from the domain of image based deep RL.
     <p>
-      <li><b>Thananjeyan, Brijen, et al. "Recovery rl: Safe reinforcement learning with learned recovery zones." 
-        IEEE Robotics and Automation Letters 6.3 (2021): 4915-4922.</b> </li>
-        In the context of image-based RL, this work is particularly relevant as it 
-        shows promising results on image-based navigation and manipulation tasks in simulation, 
-        as well as an image-based obstacle avoidance task on a physical robot. 
-        The ability to learn safety critics and recovery policies from high-dimensional
-         image observations is an important capability for applying RL to real-world robotics tasks.
-      <li><b>D. Yarats, et al. "Reinforcement Learning with Prototypical Representations," in Proceedings of the 38th International Conference on Machine Learning, vol. 139, pp. 11920-11931, PMLR, 2021. [Online]. Available: https://proceedings.mlr.press/v139/yarats21a.html</b></li>
+    <li><b>Schulman, John, et al. "Proximal policy optimization algorithms." arXiv preprint arXiv:1707.06347 (2017).</b></li>
+      The paper introduces the Proximal Policy Optimization (PPO) algorithm, a family of policy gradient methods for reinforcement learning.
+      To train and evaluate the performance for each of methods, we used this algorithm. This paper demonstrates the effectiveness of PPO algorithm in various
+      benchmark tasks, including simulated robotic locomotion and Atari game playing. Specifically, the paper compares PPO with other algorithms on the Atari domain,
+      showcasing its superior performance in terms of sample complexity. In the Breakout environment, PPO demonstrates significant improvements in learning
+      efficiency compared to other algorithms, highlighting its potential for achieving stable and reliable policy optimization in image-based reinforcement learning
+       tasks.
+
+    </br></br>
+    <li><b>Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).</b></li>
+    This paper presents the use of transformer for encoding images. Before this paper came out, transformer was mostly used for encoding sequential data.
+    This paper suggests that you can translate image into smaller patches and flatten in 1D to make it look like sequential data, and using transformer
+    on top of it gives us efficient embeddings of image.
+    </br></br>
+    <li><b>D. Kalashnikov et al., "Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation," in Proceedings of The 2nd Conference on Robot
+      Learning, vol. 87, pp. 651-673, PMLR, 2018 </b></li>
+      The QT-Opt algorithm presented in this paper is relevant to image-based reinforcement learning for environments like Atari Breakout.
+      Like Atari games, QT-Opt learns policies directly from raw pixel inputs using deep Q-learning.
+      The distributed off-policy training procedure enables learning from massive amounts of experience data, which could potentially be useful for increasing the sample efficiency
+      for gaming enviromnets such as Atari.
+      Additionally, the stochastic optimization used in QT-Opt to select actions could help with the high-dimensional and potentially multimodal action spaces present
+      in many Atari games.
+    </br></br>
+
+      <li><b>D. Yarats, et al. "Reinforcement Learning with Prototypical Representations," in Proceedings of the 38th International Conference on Machine Learning,
+        vol. 139, pp. 11920-11931, PMLR, 2021. </b></li>
       Proto-RL is a novel self-supervised framework that learns visual representations and prototypes in a task-agnostic pre-training phase for image-based reinforcement learning. 
       During pre-training, it explores the environment to maximize state entropy while learning the representations/prototypes. 
       The learned representations and prototypes then accelerate downstream task learning by providing effective embeddings and enabling better exploration, leading to state-of-the-art performance on various challenging visual control tasks from the DeepMind Control Suite.
-      <li><b>D. Kalashnikov et al., "Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation," in Proceedings of The 2nd Conference on Robot Learning, vol. 87, pp. 651-673, PMLR, 2018. Available: https://proceedings.mlr.press/v87/kalashnikov18a.html
-      </b></li>
-      The QT-Opt algorithm presented in this paper is relevant to image-based reinforcement learning for environments like Atari Breakout. Like Atari games, QT-Opt learns policies directly from raw pixel inputs using deep Q-learning. 
-      The distributed off-policy training procedure enables learning from massive amounts of experience data, which could potentially be useful for challenging exploration games like Breakout.
-      Additionally, the stochastic optimization used in QT-Opt to select actions could help with the high-dimensional and potentially multimodal action spaces present in many Atari games.
-      <li><b>Huang, Yangru, et al. "Spectrum random masking for generalization in image-based reinforcement learning." Advances in Neural Information Processing Systems 35 (2022): 20393-20406.</b></li>
+    </br></br>
+
+    <li><b>Huang, Yangru, et al. "Spectrum random masking for generalization in image-based reinforcement learning." Advances in Neural Information Processing
+      Systems 35 (2022): 20393-20406.</b></li>
       The paper discusses the challenge of generalization in image-based reinforcement learning (RL) and proposes a novel augmentation method called Spectrum Random Masking (SRM) to address this issue. SRM operates in the frequency domain and aims to enhance the diversity of training observations while maintaining the main content. 
       This method has been shown to improve model robustness under various distribution shifts and enhance learning stability, making it relevant to Atari games, especially Breakout environments, where the ability to generalize across different visual scenarios is crucial for effective RL performance. 
       The proposed SRM method's focus on frequency-based augmentation and its potential to improve generalization aligns with the challenges faced in training RL agents for Atari games, where visual inputs and distribution shifts are significant factors impacting performance.
-      <li><b>Schulman, John, et al. "Proximal policy optimization algorithms." arXiv preprint arXiv:1707.06347 (2017).</b></li>
-      The paper introduces the Proximal Policy Optimization (PPO) algorithm, a family of policy gradient methods for reinforcement learning. It demonstrates the effectiveness of PPO in various benchmark tasks, including simulated robotic locomotion and Atari game playing. Specifically, the paper compares PPO with other algorithms on the Atari domain, 
-      showcasing its superior performance in terms of sample complexity. In the Breakout environment, PPO demonstrates significant improvements in learning efficiency compared to other algorithms, highlighting its potential for achieving stable and reliable policy optimization in image-based reinforcement learning tasks. Overall, the paper's findings suggest 
-      that PPO is a promising approach for addressing challenges in image-based reinforcement learning, particularly in Atari game environments.
-    <br>
+
+
     </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> Methods/Approach</u></h5>
-    <h5>Simplified Proximal Policy Optimization Algorithm</h5>
+    <p>
+    Our objective is to train an RL agent using the Proximal Policy Optimization (PPO) algorithm, and see how the performance varies depending on differnet types of
+    Computer Vision(CV) techniques. We are planning to apply two types of techniques. The first techniques is classical; we are going to apply edge detector
+    for enhancing raw observation, and see whether it gives more avid signals when the scene is changed during the game. The second techniques is investigate
+      different neural network architecture. More specifically, we are going to test both CNN and ViT. However for this report, we only cover the first technique
+      and leave the second one for the final report.
 
-<p>Although there are lots of available implementations of Proximal Policy Optimization (PPO) we created a simplified version of the algorithm without the overhead of more complex systems which enhanced computational efficiency and facilitates experimentation.</p>
 
-<ul>
-  <li><strong>Convolutional Neural Network (CNN):</strong> Our model architecture includes a CNN tailored for extracting features from game frames. The network consists of three convolutional layers, each followed by ReLU activation and max pooling, culminating in a flattened layer for further processing.</li>
-  <li><strong>Policy and Value Networks:</strong> Separate networks derive from the CNN's output, with the policy network predicting action probabilities and the value network estimating state values. This separation facilitates the efficient optimization of both policy and value predictions.</li>
-</ul>
+    </p>
 
-<p>Our training process is governed by a carefully selected set of hyperparameters, optimized to balance learning efficiency and performance:</p>
 
-<ul>
-  <li><strong>Learning Rate:</strong> 0.0001, controls the step size during optimization, ensuring steady convergence without overshooting.</li>
-  <li><strong>Gamma (γ):</strong> 0.98, discounts future rewards, balancing immediate and long-term gains.</li>
-  <li><strong>Lambda (λ):</strong> 0.95, used in the Generalized Advantage Estimation (GAE), influencing the bias-variance trade-off in advantage computation.</li>
-  <li><strong>Epsilon Clip (ε):</strong> 0.1, limits the ratio of new to old policy probabilities, preventing large policy updates that could destabilize training.</li>
-  <li><strong>K Epochs:</strong> 3, the number of epochs for updating the policy using the same set of sampled data, ensuring thorough utilization of each batch.</li>
-  <li><strong>T Horizon:</strong> 20, defines the length of the trajectory segment used for each update, balancing the trade-off between update frequency and the quality of the advantage estimates.</li>
-</ul>
+
+    <div class="eleven columns ">
+      <p><b>1) Enhancing observation using Edge Detectors </b></p>
+      <figure>
+          <img src="assets/img/fig7.png" alt=" fig1" width="1000" class="center">
+          <figcaption class="center">Figure 2. Original Frame</figcaption>
+        </figure>
+        <p>The input observations provided to the agent consist of 84 x 84 grayscale images capturing the game screen at each timestep. A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into
+          the model.To optimize the agent's ability to learn from visual inputs, we developed a sophisticated preprocessing pipeline that includes the following steps:</p>
+        <ol>
+          <li><strong>AtariPreprocessing and PreprocessAtari wrapper:</strong> Follows the guidelines in Machado et al. (2018) which applies frame skipping, max-pooling, resizing, grayscale conversion etc.</li>
+          <li><strong>Utilizing the FrameStack wrapper:</strong> We stack multiple consecutive frames, providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
+        </ol>
+
+        <p>We then added Edge Detection wrapper in two separate ways that applies Canny edge detection to highlight important visual features. One is converting the frames into pure edge graphs and one highlighting the edge by switching one channel of RGB to be edge detector.</p>
+
+
+
+    </div>
+    <div class="eleven columns ">
+    <p><b>2) Reinforcement Learning </b></p>
+    Although there are lots of available implementations of Proximal Policy Optimization (PPO) we created a simplified version of the algorithm without the
+      overhead of more complex systems which enhanced computational efficiency and facilitates experimentation.
+
+
+
+
+    <ul>
+      <li><strong>Convolutional Neural Network (CNN):</strong> Our model architecture includes a CNN tailored for extracting features from game frames. The network consists of three convolutional layers, each followed by ReLU activation and max pooling, culminating in a flattened layer for further processing.</li>
+      <li><strong>Policy and Value Networks:</strong> Separate networks derive from the CNN's output, with the policy network predicting action probabilities and the value network estimating state values. This separation facilitates the efficient optimization of both policy and value predictions.</li>
+    </ul>
+
+    <p>Our training process is governed by a carefully selected set of hyperparameters, optimized to balance learning efficiency and performance:</p>
+
+    <ul>
+      <li><strong>Learning Rate:</strong> 0.0001, controls the step size during optimization, ensuring steady convergence without overshooting.</li>
+      <li><strong>Gamma (γ):</strong> 0.98, discounts future rewards, balancing immediate and long-term gains.</li>
+      <li><strong>Lambda (λ):</strong> 0.95, used in the Generalized Advantage Estimation (GAE), influencing the bias-variance trade-off in advantage computation.</li>
+      <li><strong>Epsilon Clip (ε):</strong> 0.1, limits the ratio of new to old policy probabilities, preventing large policy updates that could destabilize training.</li>
+      <li><strong>K Epochs:</strong> 3, the number of epochs for updating the policy using the same set of sampled data, ensuring thorough utilization of each batch.</li>
+      <li><strong>T Horizon:</strong> 20, defines the length of the trajectory segment used for each update, balancing the trade-off between update frequency and the quality of the advantage estimates.</li>
+    </ul>
 
 <p><strong>Custom Vector Environment</strong></p>
 
 <p>We also implemented designed algorithm in vectorized environment so that multiple instances of the environment can be run in parallel. This means that the agent can collect more diverse experience in a shorter amount of time, leading to faster learning and improved overall performance.</p>
 
-<p><strong>Image Preprocessing Techniques</strong></p>
-
-<p>A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into the model.</p>
-
-<p>To optimize the agent's ability to learn from visual inputs, we developed a sophisticated preprocessing pipeline that includes the following steps:</p>
-<ol>
-  <li><strong>AtariPreprocessing and PreprocessAtari wrapper:</strong> Follows the guidelines in Machado et al. (2018) which applies frame skipping, max-pooling, resizing, grayscale conversion etc.</li>
-  <li><strong>Utilizing the FrameStack wrapper:</strong> We stack multiple consecutive frames, providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
-</ol>
-
-<p>We then added Edge Detection wrapper in two separate ways that applies Canny edge detection to highlight important visual features. One is converting the frames into pure edge graphs and one highlighting the edge by switching one channel of RGB to be edge detector.</p>
-<figure>
-  <img src="assets/img/fig1.png" alt=" fig1">
-  <figcaption>Figure 1. Original Frame</figcaption>
-</figure>
-<figure>
-  <img src="assets/img/fig2.png" alt=" fig2">
-  <figcaption>Figure 2. Pure Edge Enhanced Frame After Preprocess</figcaption>
-</figure>
-<figure>
-  <img src="assets/img/fig3.png" alt=" fig3">
-  <figcaption>Figure 3. No Edge Enhanced (Baseline) Frame After Preprocess</figcaption>
-</figure>
-<figure>
-  <img src="assets/img/fig4.png" alt=" fig4">
-  <figcaption>Figure 4. Edge Enhanced + Color Scale Frame After Preprocess</figcaption>
-</figure>
-
+</div>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
@@ -316,31 +298,31 @@
 
 </style>
 
-<figure class="custom-figure">
-
-
-  <img src="assets/img/fig5_new.png" alt=" fig5">
-  <figcaption>Fig 5. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
+<figure >
+  <img src="assets/img/fig5_new.png" alt=" fig5" class="center" width="1000">
+  <figcaption class="center">Fig 6. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
 </figure>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> What’s next</u></h5>
-    <p>Moving forward, our plan entails conducting a series of experiments to evaluate the impact of incorporating edge detection preprocessing on the training performance of the RL agent.
-       We will meticulously analyze key performance metrics such as convergence speed, final reward attainment, and overall stability of training. 
-       Additionally, we intend to explore variations in edge detection algorithms and parameters to ascertain the optimal configuration for improving agent performance. 
-       Through these experiments, we strive to gain deeper insights into the interplay between image preprocessing techniques and RL training dynamics, ultimately advancing the state-of-the-art in gaming agent development. </p>
+    <p>Moving forward, our plan entails conducting a series of experiments to evaluate the impact of incorporating edge detection preprocessing on the
+      training performance of the RL agent.
+       We will also analyze key performance metrics such as convergence speed, final reward attainment, and overall stability of training.
+       Additionally, we intend to explore variations in edge detection algorithms and parameters to ascertain the optimal configuration for improving agent
+      performance.
+       Through these experiments, we strive to gain deeper insights into the interplay between image preprocessing techniques and RL training dynamics,
+      ultimately advancing the state-of-the-art in gaming agent development. </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u>Team member contributions</u></h5>
-    <p>Indicate what you anticipate each team member will contribute by the final project submission.</p>
-    
-    <br>Note: List every member name and their corresponding tasks in bullet points – or you may 
-    simply assign team member names to the task list you created above. 
-    <br>
-    <li>Juntao He</li>
-    Build the project website and write the ralated works part.
+    <li>Eva Li : In charge of experimentations. Implemented Edge detector. Tested different types of methods and report results.</li>
+
+    <li>Seungeun Rho : In charge of implementations. Implemented backbone PPO codes, custom Vectorized environments, agent architectures, and training code.</li>
+
+    <li>Juntao He : In charge of project webpage and report. Related work research. Also helped implementing features from backbone codes.</li>
+
   </div>
   
   <!-- Teaching ––––––––––––––––––––––––––––––––––––––––––––––––––
