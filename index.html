@@ -305,7 +305,7 @@
   <img src="assets/img/fig5_new.png" alt=" fig5" class="center" width="1000">
   <figcaption class="center">Fig 4. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
 </figure>
-  </div>
+
   <h6><b>2) Ablation study of neural network architectures - CNN vs Vision Transformer</b></h6>
   ##########################PLACEHOLDER#####################
   <h6><b>3) Integrating Auxiliary Loss for Reward Prediction</b></h6>
@@ -314,7 +314,7 @@
   <strong>Standard PPO (Green): </strong> The baseline method follows traditional reinforcement learning practices. Initially, the learning progress appeared gradual, and towards the end, it achieved a stable but lower performance, ending near a score of 120.
 </li>
 <li>
-  <strong>2.	PPO with Auxiliary Loss (Gray Curve): </strong> This method initially showed a significant boost in performance during the early training phase, suggesting that the auxiliary loss was effective in providing a more informative signal to guide the learning process. However, as training progressed, the model with auxiliary loss was eventually outperformed by the standard PPO model. This indicates that while auxiliary loss can accelerate early learning, it may lead to suboptimal policy refinement in later stages
+  <strong>PPO with Auxiliary Loss (Gray Curve): </strong> This method initially showed a significant boost in performance during the early training phase, suggesting that the auxiliary loss was effective in providing a more informative signal to guide the learning process. However, as training progressed, the model with auxiliary loss was eventually outperformed by the standard PPO model. This indicates that while auxiliary loss can accelerate early learning, it may lead to suboptimal policy refinement in later stages
 </li>
 </ol>
 <p>The results indicate that the auxiliary loss has a pronounced impact on the initial training phase, likely due to its role in sharpening the reward signal and thus guiding the agent to quicker preliminary learning. However, over extended training iterations, the advantage of auxiliary loss diminishes, and the standard PPO model without such additional loss overtakes in performance, suggesting that auxiliary loss may introduce some limitations to long-term policy optimization.</p>
@@ -322,6 +322,7 @@
   <img src="assets/img/fig9.png" alt=" fig9" class="center" width="600">
   <figcaption class="center">Fig 5.Score Change of Model with Auxiliary Loss of 100k Training Iterations</figcaption>
 </figure>
+</div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> Discussion</u></h5>
@@ -357,7 +358,6 @@
 
     <li>Juntao He : Project webpage and report. Implemented VIT and experimented. Related work research. Also helped implementing features from backbone codes.</li>
 
-  </div>
   
   <!-- Teaching ––––––––––––––––––––––––––––––––––––––––––––––––––
   <div class="container">
