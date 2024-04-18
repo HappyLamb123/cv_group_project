@@ -91,37 +91,15 @@
       <figcaption class="center">Figure 1. An in-game scene of Atari-Breakout</figcaption>
 
     </figure>
-
     <p>
-      In this project, we aim to investigate how both classical and modern techniques in computer vision affects to the performance of
-      Reinforcement Learning (RL) agents in game domains. We trained an agent that decides an action based on an observation using RL.
-      We used Breakout-Atrai game as our benchmark environments, since Breakout presents a classic yet challenging scenario for RL agents due to its dynamic nature and complex gameplay mechanics.
-      For each step, the only information given to the agent is RGB image, so the agent should be able to infer the true state by encoding the low-level image input
-      into high-level embeddings, which later will be used to decide actions.</p>
+      <h6><u>High Level Description and Motivation:</u></h6>
+      Our project sits at the crossroads of computer vision and reinforcement learning (RL), with a goal to enhance the perceptual capabilities of RL agents in game environments. Our motivation for the project is to improve agents’ ability to utilize visual information to make informed decisions, a capability crucial for applications like autonomous navigation and interactive entertainment.</p>
     <p>
-      To demonstrate the effectiveness of computer vision techniques we learned from class, we apply following two different techniques for extracting the informations from image,
-      and see how the final performance changes.
+      <h6><u>Specific Problem Definition:</u></h6>
+      Specifically, we focus on using the Breakout game to evaluate how various image preprocessing techniques like Edge Detector or Vision Transformer can improve RL performance. We believe with enhanced edge information the agent should be able to capture useful structural information more quickly and make more informed decision in quicker manner. With Vision Transformer which treats an image as a sequence of patches and applies self-attention mechanisms we also expect it to perform better than baseline image-based RL. Additionally, we also explored whether adding auxiliary loss information would help agent be better informed of current environmental information and in turn improve performance.
       </br></br>
-
-      <b>1) Enhancing observation using Edge Detectors</b></br>
-      By augmenting the raw visual data with edge information, we aim to provide the RL agent with more salient features to better understand the game dynamics.
-      Our primary goal is to evaluate whether incorporating edge detection preprocessing enhances the training performance of the RL agent, ultimately leading to
-      improved gameplay proficiency.
-      </br></br>
-      <b>2) Ablation study of neural network architectures - CNN vs Vision Transformer</b></br>
-      During the coursework we learned two most prominent neural network archiectures for image encoding; Convolutional Neural Networks(CNN) and Vision Transformer(ViT).
-      We aim to compare the effectiveness of each architecture for encoding image for RL agents.
-      </br></br>
-
-      Since the RL has seen remarkable advancements particularly in the domain of video game playing agents, we believe that understanding the usefulness of each computer vision
-      techniques for encoding images will lead to deeper understanding of each method.
-
-
     </p>
 
-    <p>
-
-    </p>
 
      <!-- PUBLICATION ENTRY –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <!-- <div class="row video-row"> -->
@@ -196,56 +174,48 @@
 
     <li><b>Huang, Yangru, et al. "Spectrum random masking for generalization in image-based reinforcement learning." Advances in Neural Information Processing
       Systems 35 (2022): 20393-20406.</b></li>
-      The paper discusses the challenge of generalization in image-based reinforcement learning (RL) and proposes a novel augmentation method called Spectrum Random Masking (SRM) to address this issue. SRM operates in the frequency domain and aims to enhance the diversity of training observations while maintaining the main content. 
-      This method has been shown to improve model robustness under various distribution shifts and enhance learning stability, making it relevant to Atari games, especially Breakout environments, where the ability to generalize across different visual scenarios is crucial for effective RL performance. 
+      The paper discusses the challenge of generalization in image-based reinforcement learning (RL) and proposes a novel augmentation method called Spectrum Random Masking (SRM) to address this issue. 
       The proposed SRM method's focus on frequency-based augmentation and its potential to improve generalization aligns with the challenges faced in training RL agents for Atari games, where visual inputs and distribution shifts are significant factors impacting performance.
-
-
+    </br></br>
+      While the mentioned studies have significantly advanced the field of RL in the context of visual environments, there remains a gap in understanding how different image preprocessing techniques, such as edge detection, and neural network architectures specifically influence RL agent performance. Our work aims to address this by conducting a comparative study of preprocessing methods and neural architectures like CNNs and ViTs. Furthermore, we propose the integration of auxiliary loss functions to enhance learning signals, a dimension not fully explored in the context of sparse reward environments typical of many RL scenarios.
     </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u> Methods/Approach</u></h5>
     <p>
-    Our objective is to train an RL agent using the Proximal Policy Optimization (PPO) algorithm, and see how the performance varies depending on differnet types of
-    Computer Vision(CV) techniques. We are planning to apply two types of techniques. The first techniques is classical; we are going to apply edge detector
-    for enhancing raw observation, and see whether it gives more avid signals when the scene is changed during the game. The second techniques is investigate
-      different neural network architecture. More specifically, we are going to test both CNN and ViT. However for this report, we only cover the first technique
-      and leave the second one for the final report.
+      <h6><u> Methods Overview</u></h6>
+      Our objective is to train an RL agent using the Proximal Policy Optimization (PPO) algorithm, and see how the performance varies depending on different types of Computer Vision(CV) techniques. As stated in the first section of the report, we explored three different approaches to achieve our goal.
+    </p>  
+      <ol>
+        <li>
+          <strong>Enhancing observation using Edge Detectors</strong> By augmenting the raw visual data with edge information, we aim to provide the RL agent with more salient features to better understand the game dynamics. Our primary goal is to evaluate whether incorporating edge detection preprocessing enhances the training performance of the RL agent, ultimately leading to improved gameplay proficiency.
+        </li>
+        <li>
+          <strong>Ablation study of neural network architectures - CNN vs Vision Transformer</strong> During the coursework we learned two most prominent neural network archiectures for image encoding; Convolutional Neural Networks(CNN) and Vision Transformer(ViT). We aim to compare the effectiveness of each architecture for encoding image for RL agents.
+        </li>
+        <li>
+          <strong>Integrating Auxiliary Loss for Reward Prediction</strong> We introduce an auxiliary loss function aimed at predicting the immediate reward based on the current state's image. This predictive task is expected to provide the agent with a richer learning signal, potentially enhancing the learning process, especially in the early stages when the reward signal is more sparse. We will assess whether this additional learning objective facilitates a quicker and more robust convergence of the agent's policy.
+        </li>
+      </ol>
+      <figure>
 
-
-    </p>
+        <img src="assets/img/fig 8 flow chart.png" alt=" fig2" width="600" class="center">
+        <figcaption class="center">Figure 2. Approach Pipeline</figcaption>
+  
+      </figure>
+    
 
 
 
     <div class="eleven columns ">
-      <p><b>1) Enhancing observation using Edge Detectors </b></p>
-      <figure>
-          <img src="assets/img/fig7.png" alt=" fig1" width="1000" class="center">
-          <figcaption class="center">Figure 2. Original Frame</figcaption>
-        </figure>
-        <p>A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into
-          the model.To optimize the agent's ability to learn from visual inputs, we developed a preprocessing pipeline that includes the following
-          steps. First, the original input observations from the game is RGB image with size of 210 x 160 (Figure 1.a). We first <b>preprocess</b> this image and then applies
-          edge detectors on top of it. Figure 2 illustrates the examplary image from each procedure
-          <ul>
-            <li>(a) Original Frame</li>
-            <li>(b) After Preprocessing</li>
-              <ul>
-                  <li>resize into 84 x 84</li>
-                  <li>transform into gray image</li>
-                  <li>cut out the top 16 pixels and bottom 4 pixels which are irrelevant to game playing</li>
-                  <li>stack 4 consecutive images :  providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
-                </ul>
-            <li>(c) Edge Enhanced Frame After Preprocessing </li>
-            <li>(d) Edge Enhanced + Color Scale Frame After Preprocessing</li>
-          </ul>
-
-
-
+      <h5><u>Experiment Setup </u></h5>
+    <p>Our objective is to train an RL agent using the Proximal Policy Optimization (PPO) algorithm, and see how the performance varies depending on differnet types of Computer Vision(CV) techniques. 
+      We directly implemented RL algorihtm, Proximal Policy Optimization (PPO) by ourselves to avoid the overhead of more complex systems. This enhanced computational efficiency and facilitates experimentation.
+      </p>  
+      
     </div>
     <div class="eleven columns ">
-    <p><b>2) Reinforcement Learning </b></p>
     We directly implemented RL algorihtm, Proximal Policy Optimization (PPO) by ourselves to avoid the overhead of more complex systems. This enhanced computational
       efficiency and facilitates experimentation.
 
@@ -264,18 +234,46 @@
       <li><strong>K Epochs:</strong> 3, the number of epochs for updating the policy using the same set of sampled data, ensuring thorough utilization of each batch.</li>
       <li><strong>T Horizon:</strong> 20, defines the length of the trajectory segment used for each update, balancing the trade-off between update frequency and the quality of the advantage estimates.</li>
     </ul>
-
+    When evaluating for edge detector’s performance a total of 45k steps were taken. When evaluating for auxiliary loss added model’s performance a total of 100k steps were taken. The performance of the model is evaluated based on the score the agent was able to achieve as the training steps increase.
+  </br></br>
 <p><strong>Custom Vector Environment</strong></p>
 
 <p>We also implemented designed algorithm in vectorized environment so that multiple instances of the environment can be run in parallel. This means that the agent can collect more diverse experience in a shorter amount of time, leading to faster learning and improved overall performance.</p>
+<p>First techniques is classical; we are going to apply edge detector for enhancing raw observation, and see whether it gives more avid signals when the scene is changed during the game. </p>
+<p><b>1) Enhancing observation using Edge Detectors </b></p>
+      <figure>
+          <img src="assets/img/fig7.png" alt=" fig1" width="1000" class="center">
+          <figcaption class="center">Figure 3. Frame Inputs to the Model</figcaption>
+        </figure>
+        <p>A pivotal aspect of our methodology is the application of targeted image preprocessing techniques aimed at optimizing the visual information fed into
+          the model.To optimize the agent's ability to learn from visual inputs, we developed a preprocessing pipeline that includes the following
+          steps. First, the original input observations from the game is RGB image with size of 210 x 160 (Figure 3.a). We first <b>preprocess</b> this image and then applies
+          edge detectors on top of it. Figure 3 illustrates the examplary image from each procedure
+          <ul>
+            <li>(a) Original Frame</li>
+            <li>(b) After Preprocessing</li>
+              <ul>
+                  <li>resize into 84 x 84</li>
+                  <li>transform into gray image</li>
+                  <li>cut out the top 16 pixels and bottom 4 pixels which are irrelevant to game playing</li>
+                  <li>stack 4 consecutive images :  providing the agent with temporal context necessary for understanding motion and progression within the game.</li>
+                </ul>
+            <li>(c) Edge Enhanced Frame After Preprocessing </li>
+            <li>(d) Edge Enhanced + Color Scale Frame After Preprocessing</li>
+          </ul>
+<p><b>2) Ablation study of neural network architectures - CNN vs Vision Transformer </b></p>
+##########################PLACEHOLDER#####################
+<p><b>3) Integrating Auxiliary Loss for Reward Prediction </b></p>
+<p>An auxiliary loss component is added if configured, which uses the reward predictions as a form of additional supervision to improve learning. The reward predictions use the CNN to process the input observation and produce a feature representation. This auxiliary loss is integrated into the overall loss function to enhance the prediction accuracy of the rewards based on the agent's actions and states. </p>
+
 
 </div>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
-    <h5><u> Experiments / Results</u></h5>
-    <p>We conducted three distinct training experiments on the Breakout game, employing different image preprocessing strategies to evaluate their impact on learning performance (Figure 3).</p>
-
+    <h5><u> Results</u></h5>
+    <h6><b>1) Enhancing observation using Edge Detectors</b></h6>
+    <p>We conducted three distinct training experiments on the Breakout game, employing different image preprocessing strategies to evaluate their impact on learning performance (Figure 4).</p>
 <ol>
   <li>
     <strong>Default Preprocessing (Blue):</strong> Our first experiment adhered to the default preprocessing settings provided by OpenAI's AtariPreprocessing, FrameStacking, and simple crop of top and bottom of the page that consist of useless information for agent training. This method provided a baseline for performance comparison, focusing on the original visual representation with minimal modifications. Shows a score ending near 40.
@@ -305,26 +303,59 @@
 
 <figure >
   <img src="assets/img/fig5_new.png" alt=" fig5" class="center" width="1000">
-  <figcaption class="center">Fig 3. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
+  <figcaption class="center">Fig 4. Score Change of Three Preprocessing Procedures Over 45k Training Iterations</figcaption>
 </figure>
+  </div>
+  <h6><b>2) Ablation study of neural network architectures - CNN vs Vision Transformer</b></h6>
+  ##########################PLACEHOLDER#####################
+  <h6><b>3) Integrating Auxiliary Loss for Reward Prediction</b></h6>
+<ol>
+<li>
+  <strong>Standard PPO (Green): </strong> The baseline method follows traditional reinforcement learning practices. Initially, the learning progress appeared gradual, and towards the end, it achieved a stable but lower performance, ending near a score of 120.
+</li>
+<li>
+  <strong>2.	PPO with Auxiliary Loss (Gray Curve): </strong> This method initially showed a significant boost in performance during the early training phase, suggesting that the auxiliary loss was effective in providing a more informative signal to guide the learning process. However, as training progressed, the model with auxiliary loss was eventually outperformed by the standard PPO model. This indicates that while auxiliary loss can accelerate early learning, it may lead to suboptimal policy refinement in later stages
+</li>
+</ol>
+<p>The results indicate that the auxiliary loss has a pronounced impact on the initial training phase, likely due to its role in sharpening the reward signal and thus guiding the agent to quicker preliminary learning. However, over extended training iterations, the advantage of auxiliary loss diminishes, and the standard PPO model without such additional loss overtakes in performance, suggesting that auxiliary loss may introduce some limitations to long-term policy optimization.</p>
+<figure >
+  <img src="assets/img/fig9.png" alt=" fig9" class="center" width="600">
+  <figcaption class="center">Fig 5.Score Change of Model with Auxiliary Loss of 100k Training Iterations</figcaption>
+</figure>
+  <div class="container">
+    <div class="div_line"></div><br>
+    <h5><u> Discussion</u></h5>
+    <p>
+      In this project our aim was to explore how various image preprocessing techniques could potentially improve an agent's ability to utilize visual information for decision-making.
+    </br></br>
+    Our approach involved experimenting with methods like Edge Detection and Vision Transformers (ViT) to determine their impact on the performance of RL agents. We hypothesized that by leveraging the structural information provided by these techniques, the RL agent could make quicker and more informed decisions. Indeed, through our experiments with the Breakout game, we found that a composite of edge detection and image stacking markedly improved performance, suggesting the value of combining structural and temporal visual cues.
+    </br></br>
+    Additionally, our exploration into the effect of auxiliary loss information for better informing the agent of its environmental state yielded intriguing results. While the auxiliary loss accelerated initial learning, its benefit tapered off, and the agent trained with a standard PPO eventually surpassed it in performance.
+    </br></br>
+    For future work, several avenues appear promising. First, refining the integration of auxiliary loss to sustain its benefits throughout the learning process could be explored. Second, investigating other hybrid neural architectures that combine the strengths of CNNs and ViTs for image-based RL tasks could potentially yield improvements in agent performance.
+    </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
-    <h5><u> What’s next</u></h5>
+    <h5><u> Challenges</u></h5>
     <p>
-    Implementation of ViT (~April 10th) : Juntao He, Eva Li </br>
-      Experimentation with ViT (~April 17th): Seungeun Rho</br>
-      Final Report (~April 20th): Seungeun Rho, Juntao He, Eva Li</br>
+      One challenge we encountered at the beginning of the project was we misunderstood the rule for Breakout game and had the expectation that the model would be able to perform well with pure edge enhanced graph. We neglected the rule emphasizing the association between score and color thus wasted time in training model that was obvious not going to success. 
+    </br></br>
+      One other significant challenge was fine-tuning the preprocessing methods to enhance the RL agent's perception without overwhelming it with redundant or irrelevant information. 
+    </br></br>
+      We also struggled with balancing the computational efficiency against the complexity of the models, particularly when implementing the Vision Transformers, which are inherently more resource-intensive than simpler architectures like CNNs.
+    </br></br>
+    If we were to start the project anew, we would likely allocate more time for experimenting with different neural network architectures, potentially considering lightweight variations of Vision Transformers that retain their effectiveness while being less computationally demanding. Additionally, we would explore more sophisticated methods of feature extraction that could provide more nuanced visual cues to the RL agent without significantly increasing the computational load. This could involve the use of advanced edge detection techniques that focus on dynamic changes within the game environment, which could be more informative for the agent's decision-making processes.
     </p>
   </div>
   <div class="container">
     <div class="div_line"></div><br>
     <h5><u>Team member contributions</u></h5>
-    <li>Eva Li : In charge of experimentations. Implemented Edge detector. Tested different types of methods and report results.</li>
+    <li>Eva Li : Implemented Edge detector and experiments. Tested different types of methods and report results. Result anlysis and report writing. </li>
 
-    <li>Seungeun Rho : In charge of implementations. Implemented backbone PPO codes, custom Vectorized environments, agent architectures, and training code.</li>
+    <li>Seungeun Rho : In charge of implementations. Implemented backbone PPO codes, custom Vectorized environments, agent architectures, and training code. Implemented Auxiliary Loss and experiments. Implemented VIT and experiments. Report writing.</li>
 
-    <li>Juntao He : In charge of project webpage and report. Related work research. Also helped implementing features from backbone codes.</li>
+    <li>Juntao He : Project webpage and report. Implemented VIT and experimented. Related work research. Also helped implementing features from backbone codes.</li>
 
   </div>
   
