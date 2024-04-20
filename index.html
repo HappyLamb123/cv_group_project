@@ -192,7 +192,7 @@
           <strong>Enhancing observation using Edge Detectors</strong> By augmenting the raw visual data with edge information, we aim to provide the RL agent with more salient features to better understand the game dynamics. Our primary goal is to evaluate whether incorporating edge detection preprocessing enhances the training performance of the RL agent, ultimately leading to improved gameplay proficiency.
         </li>
         <li>
-          <strong>Ablation study of neural network architectures - CNN vs Vision Transformer</strong> During the coursework we learned two most prominent neural network archiectures for image encoding; Convolutional Neural Networks(CNN) and Vision Transformer(ViT). We aim to compare the effectiveness of each architecture for encoding image for RL agents.
+          <strong>Ablation study of neural network architectures - CNN vs Vision Transformer</strong> During the coursework we learned two most prominent neural network archiectures for image encoding; the traditional CNN approach, which processes images through successive layers of convolutional filters, and the ViT approach, which uses a transformer model to process images in patches and understand their global context through self-attention mechanisms. We aim to compare the effectiveness of each architecture for encoding image for RL agents.
         </li>
         <li>
           <strong>Integrating Auxiliary Loss for Reward Prediction</strong> We introduce an auxiliary loss function aimed at predicting the immediate reward based on the current state's image. This predictive task is expected to provide the agent with a richer learning signal, potentially enhancing the learning process, especially in the early stages when the reward signal is more sparse. We will assess whether this additional learning objective facilitates a quicker and more robust convergence of the agent's policy.
@@ -234,7 +234,7 @@
       <li><strong>K Epochs:</strong> 3, the number of epochs for updating the policy using the same set of sampled data, ensuring thorough utilization of each batch.</li>
       <li><strong>T Horizon:</strong> 20, defines the length of the trajectory segment used for each update, balancing the trade-off between update frequency and the quality of the advantage estimates.</li>
     </ul>
-    When evaluating for edge detector’s performance a total of 45k steps were taken. When evaluating for auxiliary loss added model’s performance a total of 100k steps were taken. The performance of the model is evaluated based on the score the agent was able to achieve as the training steps increase.
+    When evaluating for edge detector’s performance a total of 45k steps were taken. When evaluating for auxiliary loss added model’s performance a total of 100k steps were taken. When evaluating for VIT structure a total of 65k steps were taken. The performance of the model is evaluated based on the score the agent was able to achieve as the training steps increase.
   </br></br>
 <p><strong>Custom Vector Environment</strong></p>
 
@@ -262,7 +262,9 @@
             <li>(d) Edge Enhanced + Color Scale Frame After Preprocessing</li>
           </ul>
 <p><b>2) Ablation study of neural network architectures - CNN vs Vision Transformer </b></p>
-##########################PLACEHOLDER#####################
+<p><b>CNN Encoder:</b> The first part of the ablation study employs a conventional CNN architecture as the image encoder, which has been a standard in image-based RL tasks. It serves as our control setup for performance comparison.</br></br>
+  <b>ViT Encoder:</b>  The second part replaces the CNN with a ViT encoder. This novel architecture is expected to bring a different perspective in processing visual information by treating the image as a series of patches and applying transformer-based self-attention. This method may reveal intricate dependencies and details that the CNN might overlook.</br></br>
+<b>Comparative Analysis</b> The agents' performances with each encoder (CNN and ViT) will be measured and compared. This analysis will help determine if the transformer-based approach can surpass the traditional CNN in terms of RL efficiency and decision accuracy.</p>
 <p><b>3) Integrating Auxiliary Loss for Reward Prediction </b></p>
 <p>An auxiliary loss component is added if configured, which uses the reward predictions as a form of additional supervision to improve learning. The reward predictions use the CNN to process the input observation and produce a feature representation. This auxiliary loss is integrated into the overall loss function to enhance the prediction accuracy of the rewards based on the agent's actions and states. </p>
 
@@ -307,8 +309,15 @@
 </figure>
 
   <h6><b>2) Ablation study of neural network architectures - CNN vs Vision Transformer</b></h6>
-  ##########################PLACEHOLDER#####################
-  <h6><b>3) Integrating Auxiliary Loss for Reward Prediction</b></h6>
+  <figure >
+    <img src="assets/img/fig10.png" alt=" fig10" class="center" width="600">
+    <figcaption class="center">Fig 5.Score Change of Model with CNN vs VIT</figcaption>
+  </figure>
+  The model using the CNN architecture (gray) performs better than the Vision Transformer (green). The CNN shows a substantial increase and eventually surpasses the performance of the ViT model, which indicates that, in this particular scenario, the CNN's local feature extraction methods are more effective for the given task.
+<p>
+This might suggest that the nuances of the game environment or the specifics of the task are better captured by the CNN's convolutional layers, which can be adept at processing spatial hierarchies and textures that are important for making decisions in the game. It also implies that while ViTs have potential for global context understanding, the game strategy and rewards may be more aligned with the patterns and features that a CNN can extract and learn from.
+</p>
+<h6><b>3) Integrating Auxiliary Loss for Reward Prediction</b></h6>
 <ol>
 <li>
   <strong>Standard PPO (Green): </strong> The baseline method follows traditional reinforcement learning practices. Initially, the learning progress appeared gradual, and towards the end, it achieved a stable but lower performance, ending near a score of 120.
@@ -320,7 +329,7 @@
 <p>The results indicate that the auxiliary loss has a pronounced impact on the initial training phase, likely due to its role in sharpening the reward signal and thus guiding the agent to quicker preliminary learning. However, over extended training iterations, the advantage of auxiliary loss diminishes, and the standard PPO model without such additional loss overtakes in performance, suggesting that auxiliary loss may introduce some limitations to long-term policy optimization.</p>
 <figure >
   <img src="assets/img/fig9.png" alt=" fig9" class="center" width="600">
-  <figcaption class="center">Fig 5.Score Change of Model with Auxiliary Loss of 100k Training Iterations</figcaption>
+  <figcaption class="center">Fig 6.Score Change of Model with Auxiliary Loss of 100k Training Iterations</figcaption>
 </figure>
 </div>
   <div class="container">
@@ -330,9 +339,12 @@
       In this project our aim was to explore how various image preprocessing techniques could potentially improve an agent's ability to utilize visual information for decision-making.
     </br></br>
     Our approach involved experimenting with methods like Edge Detection and Vision Transformers (ViT) to determine their impact on the performance of RL agents. We hypothesized that by leveraging the structural information provided by these techniques, the RL agent could make quicker and more informed decisions. Indeed, through our experiments with the Breakout game, we found that a composite of edge detection and image stacking markedly improved performance, suggesting the value of combining structural and temporal visual cues.
+
     </br></br>
-    Additionally, our exploration into the effect of auxiliary loss information for better informing the agent of its environmental state yielded intriguing results. While the auxiliary loss accelerated initial learning, its benefit tapered off, and the agent trained with a standard PPO eventually surpassed it in performance.
-    </br></br>
+    Upon integrating the Vision Transformer into our framework, we observed an interesting dynamic. Initially, the ViT paralleled the performance of the CNN-based agent. However, over time, the CNN outperformed the ViT, which was unexpected given the ViT's ability to capture global image features. This could suggest that for the specific challenges presented in Breakout, the localized feature extraction of CNNs is more aligned with the requisite decision-making strategies.
+  </br></br>
+  Additionally, our exploration into the effect of auxiliary loss information for better informing the agent of its environmental state yielded intriguing results. While the auxiliary loss accelerated initial learning, its benefit tapered off, and the agent trained with a standard PPO eventually surpassed it in performance.
+  </br></br>
     For future work, several avenues appear promising. First, refining the integration of auxiliary loss to sustain its benefits throughout the learning process could be explored. Second, investigating other hybrid neural architectures that combine the strengths of CNNs and ViTs for image-based RL tasks could potentially yield improvements in agent performance.
     </p>
   </div>
